@@ -3,35 +3,113 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>MAP672 Module 2 Template</title>
+    <title>Dot Matrix World</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <style>
-        /* CSS style rules go here! */
-        
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            font-family: sans-serif;
+            color: #3D4C53;
+            background-color: #F5F3EE;
+        }
+/*        The following sets the heading 1 text to 1.6 ems (1.6x of the current font size), creates 25 pixles           of space from the left border, and colors the text "firebrick".*/
+        h1 {
+            font-size: 1.6em;
+            margin-left: 25px;
+            color: firebrick;
+        }
+ /*       The following sets the heading 2 text to 1.4 ems (1.4x of the current font size), creates 25 pixles           of space from the left border, and colors the text with hex #E6772E.*/
+        h2 {
+            font-size: 1.4em;
+            margin-left: 25px;
+            color: #E6772E;
+        }
+        p {
+            font-size: 1em;
+            margin: 15px 25px;
+            max-width: 800px;
+            color: #3D4C53;
+        }
+        a {
+            color: #3e6b93;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color:crimson;
+        }
+        img {
+            margin-left: 25px;
+        }
+/*        The below targets the element with unique id 'box' and sets the width and height to 200px, the background color to an greenish-blue, and spaces it 25 px from the border.  */
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #4DB3B3;
+            margin: 25px;
+            
+        }
+/*        The below selects any elements with class attribute 'circle', sets the height and width to 100px, sets the background color (why not just color?) to a yellow, creates the appearance of a circle with border-radius of 50%, displays them on a sinfle line (instead of vertically) and as always sts margin of 25px.*/
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: #F2C249;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 25px;
+        }
     </style>
 </head>
 
 <body>
 <!-- Structured HTML goes within the body tags -->
     
-    <h1>heading 1</h1>
-    <h2>heading 2</h2>
-    <p>paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus.</p>
-    <img src="images/world.png" alt="world map">
-    <p>paragraph with link: <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl.</p>
+    <h1>Dot Matrix Lands</h1>
+    <h2>A relief map of the world, with landmass as pixels and oceans as blank against the grid.</h2>
+    <p>The passage from Pickles is primarily a plea for self awareness by the cartographer. At this point though this plea is almost a cliche. We now firmly grasp that a mapping is never mirroring (indeed even the smoothest mirror distorts); that mapping can be an exercise in power; that it will have unintended consequenses; and that any claim by a cartographer to show all information equally over a mapped space is by definition false. As the floating sheep manifesto put it, "all maps lie". So what should we do about it? Well in a way, all disciplines that show us the world, from academic research to journalism, struggle with this tension. What appealed to me about the manifesto is that it starts to give us a set of principles that apply to mapping as it is today.</p>
+    <img src="images/world2.png" alt="world map" id="map">
+<!--    The below is the basic paragraph text of the web page, with an a href link to a web page. -->
+    <p>paragraph with link: <a href="http://veggieipsum.com/">Veggie lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl.</p>
     <ul>
         <li>un-ordered list item 1</li>
         <li>list item 2</li>
         <li>list item 3</li>
+        <li><a href="http://leafletjs.com/">Leaflet</a></li>
+        <li><a href="https://www.mapbox.com/">Mapbox</a></li>
+        <li><a href="https://cartodb.com/">CartoDB</a></li>
+        <li><a href="http://d3js.org/">Data-Driven Documents</a></li>
     </ul>
+<!--    The follow creates a division element with unique identifier 'box'. The styling must be set (here or at the top or in JS below...preferable at the top to start) for the browser to know what it should look like.-->
     <div id="box"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
 
     <script>
-        // JavaScript code goes here  
+        document.querySelector('h1').innerHTML = 'web mapping is sweet!';        
+        
+        var box = document.getElementById('box');        
+        box.style.background = '#4d4a9f';
+        
+        var elements = document.getElementsByClassName('circle');
+        
+        for(var i=0; i <= elements.length-1;i++){
+            elements[i].style['border-radius'] = '20%';
+        }
+//        This line of code "listens" until the user clicks on the box element, then alters its width to 400px (which in this case doubles the width).
+        box.addEventListener('click', function() {
+            this.style.width = '400px';
+        });
+        
+        var newListItem = document.createElement('li');
+        newListItem.innerHTML = "list item 8";
+        document.querySelector('ul').appendChild(newListItem);
+        
+        console.log("hello map");
         
     </script>
     
