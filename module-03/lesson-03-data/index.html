@@ -17,7 +17,97 @@
 
 <script>
 /* JavaScript code goes here! */
-
+    console.log("hello map");
+    console.log(5); //output is a numeric type
+    console.log('5'); //output is s string type
+    console.log(5.5); //output is 5.5
+    console.log(5e10); //output is 50000000000
+    console.log(true);
+    console.log(false);
+    console.log('true');
+    console.log('false');
+    console.log(5 + 8); //output will be 13
+    console.log(5 < 8); //evaluates to true.
+    console.log(5 > 8); //evaluates to false.
+    console.log(5 == 8); //evaluates to false
+    console.log(5 != 8); //evaluates to true.
+    console.log("my name is " + "Nils Lewis");
+    console.log(5 + "8"); //output is 58
+    console.log(5 < "8"); //output is true
+    console.log(5 > "8"); //output is false
+    console.log(5 == "5"); //output is  true?
+    console.log(5 === "5"); //output is false
+    console.log(1 < 2 && 2 < 3); //output is true as both statements are trye
+    console.log(1 < 2 && 2 > 3); //output is false as one statement is false
+    console.log(1 < 2 || 2 > 3); //output is true as at least one (first) statement is true
+    console.log(!true); // output is false
+    console.log(1 != 2); //output is true because 1 is not 2.
+    console.log(1 != 1); //output is false becuase 1 does equal 1. 
+    
+    var city = 'Frankfort';
+    var state = 'Kentucky';
+    console.log(city, ', ',state);
+    
+    var total1 = 15 + 20;
+    console.log(total1);
+    var value1 = 30;
+    var value2 = 60;
+    var total2 = value1 + value2;
+    console.log(total2);
+    var average = (total1 + total2)/2;
+    console.log(average);
+    
+    var year  = 2015;
+    console.log(year); 
+    var year = year + 1;
+    console.log(year);
+    
+    var lexPop = 308428
+    console.log("The population of Lexington is",lexPop);
+    
+    var cities = []; //creates an empty array
+    console.log(cities);
+    cities = ["Frankfort", "Louisville", "Lexington"];
+    console.log(cities);
+    
+    var populations = [25527, 756832, 308428];
+    console.log(populations);
+    populations = ["Frankfort", 756832, false];
+    console.log(populations);
+    
+    var twoDArray = [
+        ["Frankfort", "Louisville", "Lexington"],
+        [25527, 756832, 308428],
+        ["Frankfort", 756832, false]
+    ];
+    console.log(twoDArray);
+    
+    console.log(cities[0]); // outputs String 'Frankfort'
+    console.log(cities[0]); // outputs string "Frankfort"
+    console.log(cities[1]); // outputs string "Louisville"
+    console.log(cities[2]); // outputs string "Lexington"
+    console.log(cities[3]); // outputs undefined
+    
+    console.log(twoDArray[0][2]); // outputs lexington
+    console.log(twoDArray[2][1]); //outputs 756832
+    
+    var years = [2010, 2011, 2022, 2013, 2014];
+    console.log(years);
+    years[2] = 2012;
+    console.log(years); //array updated...
+    
+    var counties = [];
+    console.log(counties);  //empty arrray
+    counties[0] = "Adair"; 
+    console.log(counties); //outputs array with single value adair
+    counties[1] = "Allen";
+    console.log(counties); // outputs array with both counties.
+    counties[5] = "Anderson";
+    console.log(counties); //outputs first two counties then shows 5 designating Anderson, creating intermediate undefined values. 
+    
+    
+    
+    
 </script>
     
 </body>
