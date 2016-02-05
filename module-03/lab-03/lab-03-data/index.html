@@ -68,8 +68,8 @@
         var targetDiv = 'map';
 
         var options = {
-            center: [38.0489,-84.5025],
-            zoom: 8
+            center: [38.0489,-86.5],
+            zoom: 7
         }
         map = L.map(targetDiv, options);
         
@@ -84,7 +84,24 @@
         
         // BEGIN WRITING CODE FOR LAB 03 HERE
         
-       
+        var city1Name = "Lexington";
+        city1Lat = 38.0297
+        city1Lon = -84.4947
+        city1Pop = 308428
+        city1Capital = false
+        
+        var city2Name = "Paducah"
+        city2Lat = 37.0722
+        city2Lon = -88.6275
+        city2Pop = 25018
+        city2Capital = false
+        
+        var city3Name = "Frankfort"
+        city3Lat = 38.1970
+        city3Lon = -84.8630
+        city3Pop =  27,453
+        city3Capital = true
+               
         
         // END WRITING CODE FOR LAB 03 HERE
         
@@ -99,27 +116,27 @@
         L.marker([city1Lat,city1Lon]).addTo(map)
             .bindPopup(city1Popup);
         
-//         CITY2 MARKER CODE HERE
-//        var city2Popup = "<b>"+city2Name+"</b><br>"
-//                        +"<b>population</b>: "+city2Pop;
-//        
-//        if(city2Capital == true) {
-//            city2Popup += "<br>Capital of the Commonwealth of Kentucky";   
-//        }
-//        
-//        L.marker([city2Lat,city2Lon]).addTo(map)
-//            .bindPopup(city2Popup);
+         //CITY2 MARKER CODE HERE
+        var city2Popup = "<b>"+city2Name+"</b><br>"
+                        +"<b>population</b>: "+city2Pop;
+        
+        if(city2Capital == true) {
+            city2Popup += "<br>Capital of the Commonwealth of Kentucky";   
+        }
+        
+        L.marker([city2Lat,city2Lon]).addTo(map)
+            .bindPopup(city2Popup);
         
 //         CITY3 MARKER CODE HERE
-//        var city3Popup = "<b>"+city3Name+"</b><br>"
-//                        +"<b>population</b>: "+city3Pop;
-//        
-//        if(city3Capital == true) {
-//            city3Popup += "<br>Capital of the Commonwealth of Kentucky";   
-//        }
-//        
-//        L.marker([city3Lat,city3Lon]).addTo(map)
-//            .bindPopup(city3Popup);
+        var city3Popup = "<b>"+city3Name+"</b><br>"
+                        +"<b>population</b>: "+city3Pop;
+        
+        if(city3Capital == true) {
+            city3Popup += "<br>Capital of the Commonwealth of Kentucky";   
+        }
+        
+        L.marker([city3Lat,city3Lon]).addTo(map)
+            .bindPopup(city3Popup);
           
     </script>
     
