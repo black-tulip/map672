@@ -85,36 +85,34 @@
         });
         map.addLayer(tiles);
         
-        // BEGIN WRITING CODE FOR LAB 03 HERE
         
         var city1Name = "Lexington";
-        city1Lat = 38.0297;
-        city1Lon = -84.4947;
-        city1Pop = 308428;
-        city1Capital = false;
+        var city1Lat = 38.0297;  // each new variable requires the var statement
+        var city1Lon = -84.4947;
+        var city1Pop = 308428;
+        var city1Capital = false;
         
-        var city2Name = "Paducah";
-        city2Lat = 37.0722;
-        city2Lon = -88.6275;
-        city2Pop = 25018;
-        city2Capital = false;
+        var city2Name = "Paducah",  // or you can use one var and commas between them
+            city2Lat = 37.0722,
+            city2Lon = -88.6275,
+            city2Pop = 25018,
+            city2Capital = false;
         
         var city3Name = "Frankfort";
-        city3Lat = 38.1970;
-        city3Lon = -84.8630;
-        city3Pop =  27453;
-        city3Capital = true;
+        var city3Lat = 38.1970;
+        var city3Lon = -84.8630;
+        var city3Pop =  27453;
+        var city3Capital = true;
                
-        totalPop = city1Pop + city2Pop + city3Pop;
+        var totalPop = city1Pop + city2Pop + city3Pop;
         console.log("The total population of these cities is: " + totalPop);
         
-        averagePop = totalPop/3;
+        var averagePop = totalPop/3;
         console.log("the average population of these cities is:", averagePop);
         
-        cities = [city1Name, city2Name, city3Name];
+        var cities = [city1Name, city2Name, city3Name];
         console.log(cities[2]);
         
-        // END WRITING CODE FOR LAB 03 HERE
         
         // CITY1 MARKER CODE HERE
         var city1Popup = "<b>"+city1Name+"</b><br>"
