@@ -60,7 +60,7 @@
     <footer>
         <p>Map authored by Nils Lewis</p>
         <p>Additional information about the data and map goes here.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
+        <p>These three cities form a natural triangle bracketing much of the population of the the UAE. The roads between them were some of the first paved roads in the UAE built in the 1970s, and the older generation today still remembers going between them by camel or landrover over a sea of dunes, or between Abu Dhabi and Dubai by wooden dhow.
         </p>
     </footer>
 
@@ -81,14 +81,14 @@
         // begin writing/editing Lab 04 code here
         cities = ["Abu Dhabi", 'Dubai', 'Al Ain']
         cityCoords = [
-            [24.4667, 54.3667]
-            [25.2048, 55.2708]
+            [24.4667, 54.3667],
+            [25.2048, 55.2708],
             [24.2075, 55.7447]
-        ]
+        ];
         cityPops = [613368, 2459000, 518316]
         cityCapital =[true, false, false]
 
-        for(var i = 0; i < cities.length; i++) {
+        for(var i = 0; i <= cities.length; i++) {
             
             var popup = "<b>"+cities[i]+"</b><br>"
                             +"<b>population</b>: "+cityPops[i];
@@ -99,7 +99,7 @@
                 
             } 
             
-            L.marker(/* add code here */).addTo(map)
+            L.marker([cityCoords[i][0],cityCoords[i][1]]).addTo(map)
                 .bindPopup(popup);
         }
         
