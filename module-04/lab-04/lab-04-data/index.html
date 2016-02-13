@@ -79,14 +79,14 @@
         map.addLayer(tiles);
         
         // begin writing/editing Lab 04 code here
-        cities = ["Abu Dhabi", 'Dubai', 'Al Ain']
-        cityCoords = [
+        var cities = ["Abu Dhabi", 'Dubai', 'Al Ain']
+        var cityCoords = [
             [24.4667, 54.3667],
             [25.2048, 55.2708],
             [24.2075, 55.7447]
         ];
-        cityPops = [613368, 2459000, 518316]
-        cityCapital =[true, false, false]
+        var cityPops = [613368, 2459000, 518316]
+        var cityCapital =[true, false, false]
 
         for(var i = 0; i <= cities.length; i++) {
             
@@ -99,7 +99,7 @@
                 
             } 
             
-            L.marker([cityCoords[i][0],cityCoords[i][1]]).addTo(map)
+            L.marker(cityCoords[i]).addTo(map)
                 .bindPopup(popup);
         }
         
