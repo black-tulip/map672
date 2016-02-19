@@ -115,7 +115,7 @@
 
         for(var i = 0; i < cities.length; i++) {
 
-            var density =  calcPopDensity(cityPops[i],cityAreas[i],units[i])
+            var density =  calcPopDensity(cityPops[i],cityAreas[i],units)
 
             var popup = "<b>"+cities[i]+"</b><br>"
                             +"<b>Density</b>: "+density.toLocaleString()+" people per sq " + units;
@@ -128,8 +128,8 @@
 
     function calcPopDensity(pop,area,units) {
         if(units == 'km') {
-            var dens = pop/(area * 2.899);
-            }else {
+            var dens = pop/(area * 2.58999);
+            }else if(units == 'miles') {
                 var dens = (pop/area);     
             }
         return dens;
