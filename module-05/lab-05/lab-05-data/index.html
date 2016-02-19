@@ -84,24 +84,26 @@
     // begin writing/editing Lab 05 code here
 
     var lexArea = Number(prompt("Enter data", "Enter the area of Lexington in square miles"));
-    // create a second variable to collect a second city's area here
-    // create a third variable to collect a third city's area here
+    var padArea = Number(prompt("Enter data", "Enter the area of Paducah in square miles"));
+    var frankArea = Number(prompt("Enter data", "Enter the area of Frankfort in square miles"));
+    
 
-    prepareData(lexArea); // modify this function call to pass all three variables
+    prepareData(lexArea,padArea,frankArea); // modify this function call to pass all three variables
 
-    function prepareData(lexArea) { /* modify function to include 2 more parameters */
+    function prepareData(lexArea,padArea,frankArea) { /* modify function to include 2 more parameters */
 
-        var cities = ["Lexington"]; /* add 2nd and 3rd city names */
+        var cities = ["Lexington", "Paducah", "Frankfort"]; /* add 2nd and 3rd city names */
         var cityCoords = [
-            [38.0297, -84.4947] 
+            [38.0297, -84.4947], 
+            [37.0722, -88.6275],
+            [38.1970, -84.8630]
             /* include 2nd city lat/lon here */
             /* include 3rd city lat/lon here */
-
         ];
-        var cityPops = [308428]; /* include 2nd and 3rd city pops here */
+        var cityPops = [308428, 25018, 27453]; /* include 2nd and 3rd city pops here */
 
-        var cityAreas = [lexArea]; /* include 2nd and 3rd city areas */
-
+        var cityAreas = [lexArea,padArea,frankArea]; /* include 2nd and 3rd city areas */
+////
        // call the mapCities function, passing the 4 arrays created above as arguments
 
     }
