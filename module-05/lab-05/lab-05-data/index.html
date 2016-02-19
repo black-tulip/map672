@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 05 Starter Template</title>
+    <title>Map with Input Prompts</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -52,16 +52,16 @@
 
 <body>
     <header>
-        <h1>Map Title</h1>
-        <h2>Map Subtitle</h2>
+        <h1>Map with Input Prompts</h1>
+        <h2>Area inputs to be specific...</h2>
     </header>
 
     <div id='map'></div>
 
     <footer>
         <p>Map authored by Nils Lewis</p>
-        <p>Additional information about the data and map goes here.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
+        <p>Enter your own areas! Whatever you want!</p>
+        <p>Is it correct? We hope so. Is it not? That works to. Pitfalls of volunteered data...
         </p>
     </footer>
 
@@ -129,9 +129,9 @@
     function calcPopDensity(pop,area,units) {
         if(units == 'km') {
             var dens = pop/(area * 2.899);
-            }else if(units == 'miles') {
+            }else {
                 var dens = (pop/area);     
-        }
+            }
         return dens;
     }
     // write a function named calcPopDensity which accepts three arguments, the  
