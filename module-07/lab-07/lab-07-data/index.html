@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 07 Starter Template</title>
+    <title>ClickMap</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -15,9 +15,9 @@
         body {
             margin: 0;
             padding: 0;
-            background: whitesmoke;
+            background: #0F497B;
             font-family: Lato, sans-serif;
-            color: #0D0000;
+            color: whitesmoke;
         }
         header {
             padding: 6px 10%;
@@ -25,11 +25,11 @@
         h1 {
             display: inline-block;
             margin-right: 20px;
-            color: #001323;
+            color: whitesmoke;
         }
         h2 {
             display: inline-block;
-            color: #001323;
+            color: whitesmoke;
         }
         #map {
             width: 80%;
@@ -42,7 +42,7 @@
         }
         p {
             font-size: 1em;
-            color: #001323;
+            color: whitesmoke;
         }
         /* Additional style rules go here! */
         
@@ -52,16 +52,16 @@
 
 <body>
     <header>
-        <h1>Map Title</h1>
-        <h2>Map Subtitle</h2>
+        <h1>Click anywhere for 6x Zoom!</h1>
+        <h2>Console Logs distances...</h2>
     </header>
 
     <div id='map'></div>
 
     <footer>
-        <p>Map authored by YOUR NAME</p>
-        <p>Additional information about the data and map goes here.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
+        <p>Map authored by Nils</p>
+        <p>The map allows the user to click within to get a 6x zoom view and console logs of distance to the red iguana restaurant, and from the southwest corner of the newly zoomed map to same.</p>
+        <p>This is useful if one is curious how far one's crow would have to fly to go from a certain location to the red iguana, then to the lower southwest corner of this particular map. Because maps.
         </p>
     </footer>
 
@@ -69,13 +69,27 @@
 
     var map = L.map('map', {
         center: [40,-94],
-        zoom: 4
+        zoom: 10,
+        minZoom: 4,
+        maxZoom: 12,
     });
+    var tiles =     L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	maxZoom: 19
+});
+    map.addLayer(tiles);
                 
     var redIguana = L.latLng(40.7718,-111.9124);
         
     map.on('click', function(e){
-        console.log(e.latlng);   
+        clickloc = e.latlng;
+        map.setView(clickloc, 6);
+        var distance = clickloc.distanceTo(redIguana);
+        console.log(distance);
+        var bounds = map.getBounds(); 
+        var bottomLeft = bounds.getSouthWest();
+        var distance2 = bottomLeft.distanceTo(redIguana);
+        console.log(distance2)
     });
                   
     </script>
