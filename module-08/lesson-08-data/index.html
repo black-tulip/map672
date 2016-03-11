@@ -51,15 +51,15 @@
 
 <body>
     <header>
-        <h1>Map Title</h1>
-        <h2>Map Subtitle</h2>
+        <h1>Horse Hollow Wind Energy Center</h1>
+        <h2>Wind Power!</h2>
     </header>
 
     <div id='map'></div>
 
     <footer>
-        <p>Map authored by YOUR NAME</p>
-        <p>Additional information about the data and map goes here.</p>
+        <p>Map authored by Nils Lewis</p>
+        <p>This map shows the Horse Hollow Wind Energy Center. At 735.5 MW it is the largest windfarm in the world.</p>
     </footer>
 
     <script>
@@ -86,11 +86,15 @@
               });
           },
             filter:function(feature, layer) {
-                if(feature.properties.fuel_source['Natural Gas']){
+                if(feature.properties.capacity_mw > 700 &&
+                  feature.properties.fuel_source.Wind){
+                    console.log(feature.properties.plant_name + 
+" has capacity of " + feature.properties.capacity_mw + "MW")
                     return feature;
                 }
+                        
             }
-        }).addTo(map);            
+        }).addTo(map);           
     </script>
 </body>
 
