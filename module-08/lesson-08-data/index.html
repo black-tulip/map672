@@ -61,7 +61,111 @@
     </footer>
 
     <script>
-
+        var places = {
+                      "type": "FeatureCollection",
+                      "features": [
+                        {
+                          "type": "Feature",
+                          "properties": {
+                            "marker-color": "#7e7e7e",
+                            "marker-size": "medium",
+                            "marker-symbol": "triangle",
+                            "name": "Damascus"
+                          },
+                          "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                              36.30157470703124,
+                              33.52193393882357
+                            ]
+                          }
+                        },
+                        {
+                          "type": "Feature",
+                          "properties": {
+                            "marker-color": "#7e7e7e",
+                            "marker-size": "medium",
+                            "marker-symbol": "roadblock",
+                            "Name": "Raqqa"
+                          },
+                          "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                              39.00489807128906,
+                              35.9535532323321
+                            ]
+                          }
+                        },
+                        {
+                          "type": "Feature",
+                          "properties": {
+                            "marker-color": "#7e7e7e",
+                            "marker-size": "medium",
+                            "marker-symbol": "rocket",
+                            "name": "Aleppo"
+                          },
+                          "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                              37.1502685546875,
+                              36.19109202182454
+                            ]
+                          }
+                        },
+                        {
+                          "type": "Feature",
+                          "properties": {
+                            "marker-color": "#7e7e7e",
+                            "marker-size": "medium",
+                            "marker-symbol": "harbor"
+                          },
+                          "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                              35.87482452392578,
+                              34.898743880306405
+                            ]
+                          }
+                        }
+                      ]
+                    }
+        var map = L.map('map', {
+   center: [34.7, 37.3974609375], 
+   zoom: 7
+});
+//        var options = {
+//            center: [34.95799531086792, 37.3974609375],
+//            zoom: 7
+//        };
+        var tiles  = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+        
+        var Stamen_TopOSMFeatures = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lines/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+});
+        var MapQuestOpen_HybridOverlay = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
+	type: 'hyb',
+	ext: 'png',
+	attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: '1234',
+	opacity: 0.9
+});
+        tiles.addTo(map);
+        Stamen_TopOSMFeatures.addTo(map);
+//        var placesLeaflet = L.geoJson(places).addTo(map);
+//        MapQuestOpen_HybridOverlay.addTo(map);
+        var placesLeaflet = L.geoJson(places, {
+    pointToLayer : function(feature, latlng) {
+        console.log();
+        return L.circle(latlng, 20000);
+    }
+}).addTo(map);
+    
       // build your Leaflet map here!
                   
     </script>
