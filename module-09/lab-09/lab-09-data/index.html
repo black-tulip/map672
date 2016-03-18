@@ -66,6 +66,8 @@
        var map = L.map('map', {
           center: [36,-94],
           zoom: 4,
+           minZoom: 4,
+           maxZoom: 8
       });
       
       var tiles = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
